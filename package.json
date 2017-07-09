@@ -1,6 +1,6 @@
 {
   "name": "@juspay/mystique",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "Javascript framework for building platform independent apps.",
   "main": "index.js",
   "dependencies": {
