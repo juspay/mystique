@@ -1,6 +1,8 @@
 # Mystique / DUI
 > Javascript framework for building platform independent apps.
 
+[![npm version](https://img.shields.io/npm/v/@juspay/mystique.svg?style=flat)](https://www.npmjs.com/package/@juspay/mystique)
+
 Get the SDK for:
 
  * [Android](https://github.com/juspay/dui-android)
@@ -46,7 +48,7 @@ If you want to generate `index_bundle.js` for shipping with your android/ios app
 npm run compile
 ```
 
-The files will be written to `dist` 
+The files will be written to `dist`
 
 ## Examples
 
