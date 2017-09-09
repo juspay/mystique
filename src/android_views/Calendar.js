@@ -23,14 +23,28 @@
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
 
-/*
-* Return a function which can update the UI post state change.
-*/
+var dom = require('../doms').android;
+var View = require('../base_views').AndroidBaseView;
 
-module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
+class Calendar extends View {
+	constructor(props, children) {
+		super(props, children);
+
+		this.setIds([
+			'id'
+		]);
+	}
+
+	render() {
+		var params = this.props;
+		params.__filename = params.__source.fileName  + ' :ln ' + params.__source.lineNumber;
+
+		return (
+			<calendarView
+				id={this.props.id?this.props.id:this.idSet.id}
+				params={params}/>
+		)
 	}
 }
+
+module.exports = Calendar;

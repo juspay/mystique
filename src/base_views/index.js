@@ -23,14 +23,9 @@
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
 
-/*
-* Return a function which can update the UI post state change.
-*/
-
 module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
-	}
+	AndroidBaseView : require("./AndroidBaseView"),
+	IOSBaseView : require("./IOSBaseView"),
+	WebBaseView : require("./WebBaseView"),
+	View : require("./View")
 }

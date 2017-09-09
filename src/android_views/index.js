@@ -23,14 +23,28 @@
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
 
-/*
-* Return a function which can update the UI post state change.
-*/
 
 module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
-	}
+  ImageView: require("./ImageView"),
+  LinearLayout: require("./LinearLayout"),
+  RelativeLayout: require("./RelativeLayout"),
+  TextView: require("./TextView"),
+  HorizontalScrollView: require("./HorizontalScrollView"),
+  ScrollView: require("./ScrollView"),
+  ProgressBar: require("./ProgressBar"),
+  FrameLayout: require("./FrameLayout"),
+  CheckBox: require("./CheckBox"),
+  Button: require("./Button"),
+  EditText: require("./EditText"),
+  ViewWidget: require("./ViewWidget"),
+  TabLayout: require("./TabLayout"),
+  ViewPager: require("./ViewPager"),
+  Space: require("./Space"),
+  Switch: require("./Switch"),
+  CollapsingToolbarLayout: require("./CollapsingToolbarLayout"),
+  AppBarLayout: require("./AppBarLayout"),
+  CoordinatorLayout: require("./CoordinatorLayout"),
+  ListView: require("./ListView"),
+  RatingBar: require("./RatingBar"),
+  RecyclerView: require("./RecyclerView"),
 }

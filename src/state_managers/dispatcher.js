@@ -31,9 +31,9 @@ const uiUpdater = require("./post_state_change_handler");
 
 module.exports = (rootView, uiHandler, reducer) => {
 	var updateUI = uiUpdater.register(rootView, uiHandler);
-	return (stateHandler, action, payload, events) => {
+	return (stateHandler, action, payload) => {
 		setTimeout(() => {
-			updateUI(reducer.evaluate(stateHandler, action, payload, events));
-		}, 0);
-	};
-};
+			updateUI(reducer.evaluate(stateHandler, action, payload))
+		},0);
+	}
+}

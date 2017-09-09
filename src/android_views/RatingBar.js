@@ -22,15 +22,28 @@
 * You should have received a copy of the GNU Affero General Public License
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
+var dom = require('../doms').android;
+var View = require('../base_views').AndroidBaseView;
 
-/*
-* Return a function which can update the UI post state change.
-*/
+class RatingBar extends View {
+  constructor(props, children) {
+    super(props, children);
 
-module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
-	}
+    this.setIds([
+      'id'
+    ]);
+  }
+
+  render() {
+    var params = this.props;
+    params.__filename = params.__source.fileName + ' :ln ' + params.__source.lineNumber;
+
+    return (
+      <ratingBar
+				id={this.props.id?this.props.id:this.idSet.id}
+				params={params}/>
+    )
+  }
 }
+
+module.exports = RatingBar;

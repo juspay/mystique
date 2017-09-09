@@ -23,14 +23,14 @@
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
 
-/*
-* Return a function which can update the UI post state change.
-*/
-
 module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
-	}
+	doms : require("./src/doms"),
+	stateManagers : require("./src/state_managers"),
+	connector : require("./src/connectors/screen_connector"),
+	uiHandlers : require("./src/ui_handlers"),
+	helpers : require("./src/helpers"),
+	androidViews : require("./src/android_views"),
+	iosViews : require("./src/ios_views"),
+	webViews : require("./src/web_views"),
+	baseViews : require("./src/base_views")
 }

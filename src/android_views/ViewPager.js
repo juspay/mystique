@@ -23,14 +23,33 @@
 * along with this program. If not, see <https://www.gnu.org/licenses/agpl.html>.
 */
 
-/*
-* Return a function which can update the UI post state change.
-*/
 
-module.exports = {
-	register : (rootView, uiHandler) => {
-		return (state) => {
-			uiHandler.handle(rootView.handleStateChange(state), null)
-		}
-	}
+var dom = require('../doms').android;
+var View = require('../base_views').AndroidBaseView;
+
+class ViewPager extends View {
+  constructor(props, children) {
+    super(props, children);
+
+    this.setIds([
+      'id'
+    ]);
+  }
+
+  render() {
+    var params = this.props;
+    var _this = this;
+    params.__filename = params.__source.fileName + ' :ln ' + params.__source.lineNumber;
+
+    return (
+      <viewPager
+        id={this.props.id?this.props.id:this.idSet.id}
+        params={params}>
+
+        {this.children.map(function(child) {child.__filename = _this.__filename; return  child.render()})}
+      </viewPager>
+    )
+  }
 }
+
+module.exports = ViewPager;
