@@ -282,6 +282,10 @@ function mashThis(attrs, obj, belongsTo, transformFn) {
     return "set_fontFace=android.graphics.Typeface->create:" + values[0] + "," + values[1]
       + ";" + "this->setTypeface:get_fontFace," + values[1] + ";";
   }
+  if (attrs.key == "fontStyle") {
+    prePend = "set_ast=ctx->getAssets;set_type=android.graphics.Typeface->createFromAsset:get_ast,s_fonts\/" + attrs.value + "\.ttf;";
+    currTransVal = "get_type";
+  }
 
   if(attrs.key=="fontSize") {
   	currTransVal = appendArgs(attrs,obj).split(',')[0] + ',f_' + ((window.__WIDTH * (attrs.value.split(',')[1]) * 1)) / 100;

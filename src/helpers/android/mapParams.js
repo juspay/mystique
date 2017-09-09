@@ -24,6 +24,14 @@
 */
 
 var map  = {
+  fontStyle: {
+   values: [{
+     type: 's',
+   }],
+   dontMap: 'true',
+   fnName: 'setTypeface',
+   inVokedIn: 'VIEW',
+ },
 	foreground: {
 		values: [{
       type: 'b'
